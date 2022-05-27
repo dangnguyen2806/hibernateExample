@@ -20,7 +20,7 @@ public class Position implements Serializable {
 
     @Id
     @GeneratedValue
-    private String positionId;
+    private long positionId;
 
     @Column(name = "positionName")
     private String positionName;
@@ -28,11 +28,11 @@ public class Position implements Serializable {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "position")
     private Set<Profile> position = new HashSet<>();
 
-    public String getPositionId() {
+    public long getPositionId() {
         return positionId;
     }
 
-    public void setPositionId(String positionId) {
+    public void setPositionId(long positionId) {
         this.positionId = positionId;
     }
 

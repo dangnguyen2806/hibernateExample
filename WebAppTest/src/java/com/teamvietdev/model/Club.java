@@ -20,7 +20,7 @@ public class Club implements Serializable {
 
     @Id
     @GeneratedValue
-    private String clubId;
+    private long clubId;
 
     @Column(name = "clubName")
     private String clubName;
@@ -31,11 +31,11 @@ public class Club implements Serializable {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "club")
     private Set<Profile> listProfile = new HashSet<>();
 
-    public String getClubId() {
+    public long getClubId() {
         return clubId;
     }
 
-    public void setClubId(String clubId) {
+    public void setClubId(long clubId) {
         this.clubId = clubId;
     }
 
